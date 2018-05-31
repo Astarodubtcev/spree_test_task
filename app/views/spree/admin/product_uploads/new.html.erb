@@ -1,0 +1,18 @@
+<%= render partial: 'spree/admin/shared/error_messages', locals: { target: @product_upload } %>
+
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:product_uploads), spree.admin_product_uploads_url %>
+  <%= Spree.t(:new_upload) %>
+<% end %>
+
+<%= form_for [:admin, @product_upload], html: { multipart: true } do |f| %>
+  <%= f.hidden_field :upload_type, value: 'csv' %>
+  <fieldset>
+    <%= f.field_container :file, class: ['form-group'] do %>
+      <%= f.label :file, Spree.t(:filr) %> <span class="required">*</span>
+      <%= f.file_field :file, class: 'form-control title', required: :required %>
+      <%= f.error_message_on :file %>
+    <% end %>
+    <%= render partial: 'spree/admin/shared/new_resource_links' %>
+  </fieldset>
+<% end %>

@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  spree:
+    new_upload: New Upload
+    product_uploads: Product Uploads
+    imported_products: Imported Products
+    created_at: Created At
+    file: File
+    notice_messages:
+      product_upload_deleted: Upload deleted
+      product_upload_not_deleted: Upload not deleted
